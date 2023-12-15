@@ -25,7 +25,7 @@
     }
     ```
 
-- This section prevents CORS error from another website
+- This section prevents CORS error from another website. Here is a CORS middleware.
     ```javascript
     // CORS Error Prevention
     app.use((req, res, next) => {
@@ -34,5 +34,28 @@
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
     next();
+    });
+    ```
+
+    HTML an Javacsript code is given for a front end website that can be posted on codepen.io. This is to test how the front end request will be blocked if CORS middleware is not set.
+
+    ```html
+    <button id="GET">GET</button>
+    <button id="POST">POST</button>
+    ```
+
+    ```javascript
+    const getButton = document.getElementById("GET");
+    const postButton = document.getElementById("POST");
+
+    getButton.addEventListener("click", event => {
+    fetch("http://localhost:8080/feed/posts")
+        .then(res => {
+        return res.json();
+        })
+        .then(data => {
+        console.log(data);
+        })
+        .catch(err => console.error(err));
     });
     ```
