@@ -1,4 +1,10 @@
-# REST API notes
+# Simple REST API notes:
+
+- There are 2 routes in this app.
+
+   **GET Route**: /feed/posts
+
+    **POST Route**: /feed/posts, body: {title: ..., content: ...}
 
 - There are 5 different requests in REST API. These are GET, POST, PUT, PATCH and DELETE requests.
 
