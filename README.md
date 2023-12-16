@@ -70,8 +70,8 @@
     fetch("http://localhost:3000/feed/posts", {
       method: "POST",
       body: JSON.stringify({
-        title: "Title from FrontEnd",
-        content: "This is the Codepen content!",
+        title: "Title from Front End",
+        content: "This is the front end content!",
       }),
       headers: {
         "Content-Type": "application/json",
